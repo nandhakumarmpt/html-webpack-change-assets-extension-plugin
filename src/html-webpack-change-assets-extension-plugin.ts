@@ -32,6 +32,11 @@ export default class HtmlWebpackChangeAssetsExtensionPlugin {
           const jsExtension = data.plugin.options.jsExtension
           const tempArray = data.assets.js
           data.assets.js = tempArray.map((scriptFile: any) => `${scriptFile}${jsExtension}`)
+          
+          const cssExtension = data.plugin.options.cssExtension
+          const tempArrayCSS = data.assets.css
+          data.assets.css = tempArray.map((scriptFile: any) => `${scriptFile}${cssExtension}`)
+          
           return cb(null, data)
         }
       )
